@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>componente.js - Demo</title>
+    <link rel="stylesheet" href="css/componente.css">
+</head>
+<body class="cjs-demo-body">
+
+    <div class="cjs-demo-contenedor">
+        <h1>Componente-JS</h1>
+        <p class="cjs-subtitulo">Modal y notificaciones toast.</p>
+
+        <div class="cjs-demo-seccion">
+            <h2>Modal reutilizable</h2>
+            <button class="cjs-demo-boton" id="btnModalInfo">Ver información</button>
+            <button class="cjs-demo-boton" id="btnModalTerminos">Ver términos</button>
+            <button class="cjs-demo-boton" id="btnModalConfirmar">Confirmar acción</button>
+        </div>
+
+        <div class="cjs-demo-seccion">
+            <h2>Notificaciones toast</h2>
+            <button class="cjs-demo-boton cjs-boton-exito" id="btnToastExito">Mostrar éxito</button>
+            <button class="cjs-demo-boton cjs-boton-error" id="btnToastError">Mostrar error</button>
+            <button class="cjs-demo-boton" id="btnToastInfo">Mostrar info</button>
+        </div>
+    </div>
+
+    <script src="js/componente.js"></script>
+    <script>
+
+        document.getElementById("btnModalInfo").addEventListener("click", function () {
+            mostrarModal({
+                titulo: "Acerca de componente.js",
+                contenido: "Esta es una librería de componentes visuales hecha en JavaScript :D.",
+                textoBoton: "Entendido"
+            });
+        });
+
+        document.getElementById("btnModalTerminos").addEventListener("click", function () {
+            mostrarModal({
+                titulo: "Términos y condiciones",
+                contenido: "Este es un ejemplo de modal con otro contenido totalmente distinto, para mostrar que la misma función sirve para cualquier texto.",
+                textoBoton: "Aceptar"
+            });
+        });
+
+        document.getElementById("btnModalConfirmar").addEventListener("click", function () {
+            mostrarModal({
+                titulo: "¿Confirmar acción?",
+                contenido: "Este modal además ejecuta una función cuando se cierra .",
+                textoBoton: "Confirmar",
+                alCerrar: function () {
+                    console.log("El modal de confirmación se cerró.");
+                }
+            });
+        });
+
+        document.getElementById("btnToastExito").addEventListener("click", function () {
+            mostrarToast("Los cambios se guardaron con éxito.", "exito");
+        });
+
+        document.getElementById("btnToastError").addEventListener("click", function () {
+            mostrarToast("Ocurrió un error, intenta de nuevo.", "error", 4000);
+        });
+
+        document.getElementById("btnToastInfo").addEventListener("click", function () {
+            mostrarToast("Este es un mensaje informativo.", "info");
+        });
+
+    </script>
+
+</body>
+</html>
