@@ -8,16 +8,32 @@ Componente visual reutilizable hecho en JavaScript. Incluye una ventana modal y 
 
 Cuando quiero mostrarle algo al usuario (un aviso, una confirmación, un "se guardó correctamente"), normalmente tendría que escribir el HTML del modal o de la notificación cada vez, cambiar el texto a mano y volver a programar que se cierre. Con este componente solo llamo a una función, le paso el texto que quiero, y el componente se crea, se muestra y se puede cerrar solo.
 
-## Instalación
+## CDN
 
-Agrega el CSS y el JS en tu HTML:
+Este componente está publicado en Cloudflare Workers y se puede consumir directamente desde cualquier página HTML, sin necesidad de descargar los archivos:
+
+```
+https://componente.perezeliud35.workers.dev/css/componente.css
+https://componente.perezeliud35.workers.dev/js/componente.js
+```
+
+### Uso desde el CDN
+
+```html
+<link rel="stylesheet" href="https://componente.perezeliud35.workers.dev/css/componente.css">
+<script src="https://componente.perezeliud35.workers.dev/js/componente.js"></script>
+```
+
+Con esas dos líneas, en cualquier proyecto (aunque no tenga los archivos localmente) ya quedan disponibles `mostrarModal()` y `mostrarToast()`.
+
+## Instalación (uso local)
+
+También puedes descargar los archivos y enlazarlos localmente en tu HTML:
 
 ```html
 <link rel="stylesheet" href="css/componente.css">
 <script src="js/componente.js"></script>
 ```
-
-Con eso ya tienes disponibles `mostrarModal()` y `mostrarToast()` en cualquier parte de tu página.
 
 ## Uso
 
@@ -74,6 +90,7 @@ mostrarToast("Este es un mensaje informativo.");
 /componente-js
 ├── README.md
 ├── index.html
+├── wrangler.jsonc
 ├── css/
 │   └── componente.css
 ├── js/
@@ -81,6 +98,9 @@ mostrarToast("Este es un mensaje informativo.");
 └── img/
 ```
 
+## Demo en vivo
+
+https://componente.perezeliud35.workers.dev
 
 ## Capturas de pantalla
 <img width="1105" height="688" alt="image" src="https://github.com/user-attachments/assets/fa4e6d90-316c-48a4-a0af-0275a327ca7f" />
@@ -88,11 +108,9 @@ mostrarToast("Este es un mensaje informativo.");
 <img width="1181" height="712" alt="image" src="https://github.com/user-attachments/assets/62557363-3218-4fbe-887a-650df3a81248" />
 
 
-
 ## Video
 https://drive.google.com/file/d/1vnovKuMaHSghG0V-NvZgzSK2dM4Cyl5p/view?usp=sharing
 
-
 ## Autor
 
-Perez Cruz Haniel Eliud 
+Perez Cruz Haniel Eliud
