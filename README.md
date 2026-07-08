@@ -98,7 +98,7 @@ mostrarToast("Este es un mensaje informativo.");
 └── img/
 ```
 
-## Demo en vivo
+## link cdn
 
 https://componente.perezeliud35.workers.dev
 
